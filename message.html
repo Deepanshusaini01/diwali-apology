@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Special Message</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-message">
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Fireworks canvas (background) -->
+  <canvas id="fireworks-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Floating elements container -->
+  <div class="floating-container"></div>
+
+  <!-- Main content -->
+  <div class="page-wrapper">
+    <!-- Large animated diya at top center -->
+    <div class="diya-hero reveal" style="text-align:center;margin-bottom:1.5rem;">
+      <span style="font-size:4rem;display:inline-block;filter:drop-shadow(0 0 18px #FFD783) drop-shadow(0 0 40px #D4A64A);animation:floatDiya 3s ease-in-out infinite;">🪔</span>
+    </div>
+
+    <!-- Message frame -->
+    <div class="message-frame reveal">
+      <!-- Corner ornaments -->
+      <div class="corner-ornament corner-top-left"></div>
+      <div class="corner-ornament corner-top-right"></div>
+      <div class="corner-ornament corner-bottom-left"></div>
+      <div class="corner-ornament corner-bottom-right"></div>
+
+      <h2 class="message-heading" style="font-family:'Great Vibes',cursive;color:#D4A64A;text-align:center;font-size:2.5rem;margin-bottom:0.5rem;font-weight:400;">
+        A Special Message
+      </h2>
+
+      <div class="decorative-line"></div>
+
+      <div class="message-body">
+        <p class="message-paragraph reveal stagger-1" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:300;font-size:1.15rem;color:#FFF1D6;line-height:2;">
+          Before the lights, celebrations and happiness of Diwali, there is something I want to tell you.
+        </p>
+
+        <p class="message-paragraph reveal stagger-2" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:300;font-size:1.15rem;color:#FFF1D6;line-height:2;">
+          I know things haven't been okay between us.
+        </p>
+
+        <p class="message-paragraph reveal stagger-3" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:300;font-size:1.15rem;color:#FFF1D6;line-height:2;">
+          I know you are unhappy with me, and I understand that I may have hurt you.
+        </p>
+
+        <p class="message-paragraph reveal stagger-4" style="text-align:center;font-family:'Poppins',sans-serif;font-weight:300;font-size:1.15rem;color:#FFF1D6;line-height:2;">
+          I just wanted to take a moment to tell you something sincerely.
+        </p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons reveal stagger-5">
+      <a href="index.html" class="btn-prev" onclick="navigateTo('index.html'); return false;">Previous</a>
+      <a href="apology.html" class="btn-next" onclick="navigateTo('apology.html'); return false;">Read My Apology</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init fireworks with low rate for ambient effect
+      initFireworks('fireworks-canvas', 0.01);
+      // Add falling petals
+      createFallingPetals(document.querySelector('.floating-container'), 10);
+    });
+  </script>
+</body>
+</html>
