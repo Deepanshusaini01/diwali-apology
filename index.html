@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Little Diwali Surprise</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-welcome">
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Fireworks canvas (background) -->
+  <canvas id="fireworks-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Floating elements container -->
+  <div class="floating-container"></div>
+
+  <!-- Main content -->
+  <div class="page-wrapper">
+    <!-- Toran (marigold garland) at top -->
+    <div class="toran">
+      <span class="toran-flower" style="--i:0">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:1">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:2">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:3">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:4">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:5">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:6">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:7">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:8">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:9">🌼</span>
+      <span class="toran-chain"></span>
+      <span class="toran-flower" style="--i:10">🌼</span>
+    </div>
+
+    <!-- Decorative doorway arch -->
+    <div class="doorway">
+      <div class="doorway-arch"></div>
+
+      <div class="page-content">
+        <!-- Decorative gold ornament -->
+        <div class="ornament-top">✦ 🪔 ✦</div>
+
+        <h1 class="welcome-title glow-text animate-fade-in-up">
+          शुभ दीपावली
+        </h1>
+
+        <div class="decorative-line"></div>
+
+        <p class="entrance-text reveal">
+          Some celebrations are special, and some people make them even more special.
+        </p>
+
+        <p class="entrance-subtitle reveal stagger-1">
+          This Diwali, I have a little message for you.
+        </p>
+
+        <!-- Diya row -->
+        <div class="diyas-row reveal stagger-2">
+          <span class="diya-icon">🪔</span>
+          <span class="diya-icon">🪔</span>
+          <span class="diya-icon">🪔</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rangoli at bottom -->
+    <div class="rangoli"></div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons reveal stagger-3">
+      <a href="message.html" class="btn-next" onclick="navigateTo('message.html'); return false;">Enter the Celebration</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init fireworks for welcome page
+      initFireworks('fireworks-canvas', 0.025);
+      // Add marigold petals
+      createMarigoldPetals(document.querySelector('.floating-container'), 12);
+      // Add floating lanterns
+      createFloatingLanterns(document.querySelector('.floating-container'), 4);
+    });
+  </script>
+</body>
+</html>
