@@ -1,0 +1,389 @@
+/* ═══════════════════════════════════════════════════════════════
+   COMMON.CSS — Master Stylesheet for Diwali Apology Website
+   Shared across all 7 pages (Clean & Mobile-Optimized)
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ─── 1. CSS RESET & ROOT VARIABLES ─────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --royal-purple: #241039;
+  --deep-maroon: #450F27;
+  --antique-gold: #D4A64A;
+  --warm-gold: #FFD783;
+  --cream: #FFF1D6;
+  --vermilion: #C74728;
+  --midnight-navy: #100D25;
+  --bg-deep: #100D25;
+
+  /* Derived Colors */
+  --gold-glow: rgba(212, 166, 74, 0.5);
+  --gold-subtle: rgba(212, 166, 74, 0.3);
+  --gold-faint: rgba(212, 166, 74, 0.15);
+  --cream-muted: rgba(255, 241, 214, 0.8);
+  --cream-subtle: rgba(255, 241, 214, 0.5);
+
+  /* Font Stacks */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+  --font-cursive: 'Great Vibes', cursive;
+  --font-handwritten: 'Caveat', 'Dancing Script', cursive;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── 2. BASE STYLES ────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-deep);
+  font-family: var(--font-body);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+}
+
+::selection {
+  background: var(--antique-gold);
+  color: var(--bg-deep);
+}
+
+/* ─── 3. TYPOGRAPHY ─────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--warm-gold);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.glow-text {
+  text-shadow: 0 0 12px rgba(255, 215, 131, 0.5), 0 0 24px rgba(212, 166, 74, 0.25);
+}
+
+.cursive-text {
+  font-family: var(--font-cursive);
+}
+
+/* ─── 4. BACKGROUND LAYERS ──────────────────────────────────── */
+
+#fireworks-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.floating-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ─── 5. TOP PROGRESS BAR & PILL ────────────────────────────── */
+
+.progress-bar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(212, 166, 74, 0.15);
+  z-index: 10002;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--antique-gold), var(--warm-gold));
+  box-shadow: 0 0 8px var(--gold-glow);
+  transition: width 0.4s ease;
+}
+
+.progress-indicator {
+  position: fixed;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  z-index: 10000;
+  background: rgba(16, 13, 37, 0.88);
+  padding: 4px 14px 3px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(212, 166, 74, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: auto;
+}
+
+.progress-dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+}
+
+.progress-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--antique-gold);
+  background: transparent;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.progress-dot.active {
+  background: var(--warm-gold);
+  border-color: var(--warm-gold);
+  box-shadow: 0 0 6px var(--warm-gold);
+  transform: scale(1.3);
+}
+
+.progress-dot.completed {
+  background: var(--antique-gold);
+}
+
+.progress-label {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--warm-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── 6. MUSIC TOGGLE (Header Aligned) ──────────────────────── */
+
+.music-toggle {
+  position: fixed;
+  top: 8px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(36, 16, 57, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 166, 74, 0.45);
+  color: var(--warm-gold);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-base);
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+  border-color: var(--warm-gold);
+  box-shadow: 0 0 12px rgba(255, 215, 131, 0.4);
+}
+
+.music-toggle.playing {
+  animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 166, 74, 0.4); }
+  50% { box-shadow: 0 0 10px 4px rgba(212, 166, 74, 0.25); }
+}
+
+/* ─── 7. PAGE WRAPPER ───────────────────────────────────────── */
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 2;
+  padding: 4.2rem 1.2rem 3rem 1.2rem;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ─── 8. NAVIGATION BUTTONS ─────────────────────────────────── */
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 440px;
+  z-index: 10;
+  position: relative;
+}
+
+.btn-next,
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--antique-gold), var(--warm-gold));
+  color: var(--bg-deep);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid var(--warm-gold);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 48px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 166, 74, 0.35);
+  transition: all var(--transition-base);
+  touch-action: manipulation;
+}
+
+.btn-next:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 215, 131, 0.5);
+}
+
+.btn-prev,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(36, 16, 57, 0.6);
+  color: var(--antique-gold);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.8rem;
+  border: 1.5px solid var(--antique-gold);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 48px;
+  backdrop-filter: blur(5px);
+  transition: all var(--transition-base);
+  touch-action: manipulation;
+}
+
+.btn-prev:hover,
+.btn-secondary:hover {
+  background: var(--antique-gold);
+  color: var(--bg-deep);
+  transform: translateY(-2px);
+}
+
+/* ─── 9. PAGE TRANSITION OVERLAY ────────────────────────────── */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #2e1047 0%, #100D25 100%);
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+/* ─── 10. MOBILE RESPONSIVE RULES ───────────────────────────── */
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    padding: 3.6rem 0.9rem 2.5rem 0.9rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    margin-top: 1.6rem;
+    width: 100%;
+  }
+
+  .btn-next,
+  .btn-prev,
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
