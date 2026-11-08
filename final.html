@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Final Message</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-final">
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Fireworks canvas (gentle background fireworks) -->
+  <canvas id="fireworks-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Floating elements container -->
+  <div class="floating-container"></div>
+
+  <!-- Main content wrapper -->
+  <div class="page-wrapper">
+    <!-- Single large glowing diya at the top -->
+    <div class="final-diya reveal" style="text-align:center;margin-bottom:0.8rem;">
+      <span style="font-size:3.8rem;display:inline-block;filter:drop-shadow(0 0 25px #FFD783) drop-shadow(0 0 45px #D4A64A);animation:floatDiya 3.5s ease-in-out infinite;">🪔</span>
+    </div>
+
+    <!-- Couple Diwali Memory Image -->
+    <div class="couple-photo-wrapper reveal stagger-1">
+      <div class="photo-frame">
+        <img src="assets/images/couple-diwali.jpg" alt="A Special Diwali With You" class="couple-photo" loading="eager">
+        <div class="photo-glow"></div>
+      </div>
+      <p class="photo-caption">"In every light, I hope for our peace..."</p>
+    </div>
+
+    <!-- Final letter parchment frame -->
+    <div class="final-frame reveal stagger-2">
+      <div class="corner-ornament corner-top-left"></div>
+      <div class="corner-ornament corner-top-right"></div>
+      <div class="corner-ornament corner-bottom-left"></div>
+      <div class="corner-ornament corner-bottom-right"></div>
+
+      <div class="final-letter">
+        <p class="reveal stagger-1">
+          I don't expect everything to become okay through a website or a few words.
+        </p>
+
+        <p class="reveal stagger-2">
+          I just wanted to make this little effort because you matter to me.
+        </p>
+
+        <p class="reveal stagger-3">
+          I cannot change the past, but I can take responsibility and work on being better.
+        </p>
+
+        <p class="reveal stagger-4">
+          I hope this Diwali brings you more happiness, peace and beautiful moments.
+        </p>
+
+        <p class="reveal stagger-5" style="font-weight:400;color:#FFF1D6;">
+          Once again, I am truly sorry.
+        </p>
+
+        <p class="final-highlight reveal stagger-6">
+          Happy Diwali, Meri Lakshmi. ❤️
+        </p>
+
+        <div class="decorative-line" style="margin:1.8rem auto 1rem auto;"></div>
+
+        <p class="final-signature reveal stagger-7">
+          With a sincere apology.
+        </p>
+      </div>
+
+      <!-- Lotus ornament flourish -->
+      <div style="text-align:center;margin-top:1.5rem;color:#D4A64A;font-size:1.3rem;letter-spacing:6px;opacity:0.75;">
+        ✦ 🪷 ✦
+      </div>
+    </div>
+
+    <!-- Navigation (Previous to wishes.html) -->
+    <div class="nav-buttons reveal stagger-7">
+      <a href="wishes.html" class="btn-prev" onclick="navigateTo('wishes.html'); return false;">Previous</a>
+    </div>
+
+    <!-- Heartfelt footer -->
+    <div style="text-align:center;padding:2rem 1rem 1rem 1rem;">
+      <p style="font-family:'Great Vibes',cursive;font-size:1.3rem;color:rgba(212,166,74,0.45);letter-spacing:1px;">
+        Made with sincerity and respect 🪔
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Gentle fireworks
+      if (typeof initFireworks === 'function') {
+        initFireworks('fireworks-canvas', 0.016);
+      }
+      // Falling petals mix
+      createFallingPetals(document.querySelector('.floating-container'), 12, ['#f7a8b8', '#e05577', '#ff9aa2', '#C74728', '#D4A64A', '#FFD783']);
+      createGoldenParticles(document.querySelector('.floating-container'), 20);
+    });
+  </script>
+</body>
+</html>
