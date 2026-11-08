@@ -1,0 +1,904 @@
+/* ═══════════════════════════════════════════════════════════════
+   PAGES.CSS — Page-Specific Layouts and Component Styles
+   Diwali Apology Website (All 7 Pages)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── PAGE 1: index.html (A Little Diwali Surprise) ────────── */
+
+.page-welcome {
+  background: radial-gradient(circle at 50% 25%, #34124e 0%, #200c35 45%, #100D25 100%);
+}
+
+.toran {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 0.5rem;
+  margin: 0.2rem auto 1.5rem auto;
+  position: relative;
+}
+
+.toran-flower {
+  font-size: 1.35rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 6px rgba(255, 180, 0, 0.4));
+  animation: floatDiya 3s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.18s);
+}
+
+.toran-chain {
+  flex: 1;
+  max-width: 14px;
+  height: 2px;
+  background: linear-gradient(90deg, #D4A64A, #FFD783, #D4A64A);
+  margin: 0;
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.doorway {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2.5rem 2rem;
+  border-radius: 180px 180px 24px 24px;
+  background: linear-gradient(180deg, rgba(46, 18, 70, 0.75) 0%, rgba(26, 12, 42, 0.85) 100%);
+  border: 2px solid rgba(212, 166, 74, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 45px rgba(212, 166, 74, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.doorway::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 172px 172px 18px 18px;
+  border: 1px dashed rgba(255, 215, 131, 0.35);
+  pointer-events: none;
+}
+
+.ornament-top {
+  color: var(--warm-gold);
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  margin-bottom: 1rem;
+}
+
+.welcome-title {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-family: var(--font-heading);
+  color: var(--warm-gold);
+  margin-bottom: 1rem;
+}
+
+.decorative-line {
+  width: 160px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--antique-gold), transparent);
+  margin: 1.2rem auto 1.8rem auto;
+}
+
+.entrance-text {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--cream);
+  max-width: 540px;
+  margin: 0 auto 1rem auto;
+  line-height: 1.8;
+  font-family: var(--font-heading);
+  font-style: italic;
+}
+
+.entrance-subtitle {
+  font-size: 1.05rem;
+  color: var(--cream-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem auto;
+  font-weight: 300;
+}
+
+.diyas-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.diya-icon {
+  font-size: 2.2rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 12px rgba(255, 180, 0, 0.7));
+  animation: floatDiya 3.5s ease-in-out infinite;
+}
+
+.diyas-row .diya-icon:nth-child(2) {
+  animation-delay: 0.5s;
+  font-size: 2.6rem;
+}
+
+.diyas-row .diya-icon:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.rangoli {
+  width: 180px;
+  height: 35px;
+  margin: 2.5rem auto 1rem auto;
+  background: radial-gradient(ellipse at center, rgba(212, 166, 74, 0.35) 0%, rgba(199, 71, 40, 0.25) 45%, transparent 75%);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+/* ─── PAGE 2: message.html (A Special Message) ─────────────── */
+
+.page-message {
+  background: radial-gradient(circle at 50% 30%, #2f1345 0%, #1c0a2c 55%, #100D25 100%);
+}
+
+.message-frame {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  background: linear-gradient(145deg, rgba(36, 16, 57, 0.8), rgba(20, 10, 34, 0.9));
+  border: 1px solid rgba(212, 166, 74, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.55), 0 0 30px rgba(212, 166, 74, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.message-frame::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255, 215, 131, 0.2);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.message-heading {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  color: var(--warm-gold);
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+}
+
+.message-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.message-paragraph {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(1.05rem, 2.5vw, 1.18rem);
+  color: var(--cream);
+  line-height: 2;
+  text-align: center;
+}
+
+.corner-ornament {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-color: var(--antique-gold);
+  pointer-events: none;
+}
+
+.corner-top-left {
+  top: 18px;
+  left: 18px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-top-right {
+  top: 18px;
+  right: 18px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-bottom-left {
+  bottom: 18px;
+  left: 18px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-bottom-right {
+  bottom: 18px;
+  right: 18px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* ─── PAGE 3: apology.html (A Sincere Apology) ─────────────── */
+
+.page-apology {
+  background: radial-gradient(circle at 50% 25%, #30113c 0%, #1e0b28 50%, #100D25 100%);
+}
+
+.letter-paper {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  margin: 1.2rem auto;
+  padding: 3.8rem 3.2rem 3rem 3.5rem;
+  /* Authentic Ivory White Stationery Paper with Faint Ruled Lines */
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 33px,
+      rgba(160, 185, 215, 0.45) 33px,
+      rgba(160, 185, 215, 0.45) 34px
+    ),
+    linear-gradient(178deg, #FFFFFF 0%, #FAF6EE 55%, #F4ECE0 100%);
+  border: 1px solid rgba(210, 195, 175, 0.6);
+  border-radius: 6px;
+  /* Deep Paper Shadow on Dark Festive Background */
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 10px 25px rgba(0, 0, 0, 0.45),
+    0 25px 50px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(230, 215, 190, 0.25);
+  text-align: left;
+  transform: rotate(-0.5deg);
+}
+
+/* Red Margin Line on Letter Paper */
+.letter-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 28px;
+  width: 1.5px;
+  background: rgba(225, 90, 90, 0.32);
+  pointer-events: none;
+}
+
+.wax-seal {
+  position: absolute;
+  top: -22px;
+  right: 28px;
+  width: 54px;
+  height: 54px;
+  background: radial-gradient(circle at 35% 35%, #e74c5e, #C74728, #7a1212);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(199, 71, 40, 0.6), inset 0 -3px 5px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  border: 1px solid rgba(255, 200, 150, 0.35);
+}
+
+.letter-salutation {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  color: #7A1D28; /* Deep Maroon / Crimson Ink */
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 1px rgba(122, 29, 40, 0.2);
+}
+
+.letter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.letter-body p {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(1.4rem, 3.8vw, 1.7rem);
+  color: #172138; /* Authentic Blue-Black Fountain Pen Ink */
+  line-height: 1.85;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-shadow: 0 0 1px rgba(23, 33, 56, 0.15);
+}
+
+.letter-signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 5.5vw, 2.8rem);
+  color: #7A1D28; /* Matching Crimson Fountain Pen Seal */
+  text-align: right;
+  margin-top: 1.8rem;
+  text-shadow: 0 0 1px rgba(122, 29, 40, 0.2);
+}
+  margin-top: 2rem;
+}
+
+/* ─── PAGE 4: reflection.html (What I Want You To Know) ────── */
+
+.page-reflection {
+  background: radial-gradient(circle at 50% 30%, #29103c 0%, #180927 55%, #100D25 100%);
+}
+
+.reflection-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 620px;
+  margin: 2.5rem auto;
+}
+
+.reflection-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(36, 16, 57, 0.75), rgba(69, 15, 39, 0.55));
+  border: 1px solid rgba(212, 166, 74, 0.22);
+  border-radius: 14px;
+  padding: 2.2rem 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.reflection-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 166, 74, 0.25);
+  border-color: rgba(255, 215, 131, 0.45);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 10px rgba(255, 215, 131, 0.3));
+}
+
+.card-header {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  color: var(--warm-gold);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.card-body {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--cream);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ─── PAGE 5: diya.html (A Light of Hope) ──────────────────── */
+
+.page-diya {
+  background: radial-gradient(circle at 50% 50%, #220d32 0%, #150822 50%, #0a0414 100%);
+}
+
+.diya-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  margin: 1.5rem auto 2rem auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.diya-ambient {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 200, 50, 0.28) 0%, rgba(255, 130, 0, 0.12) 45%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.diya-ambient.lit {
+  opacity: 1;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.diya-construction {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.diya-wick {
+  width: 3px;
+  height: 18px;
+  background: linear-gradient(to top, #3a2a1a, #1a1005);
+  margin-bottom: -2px;
+  z-index: 3;
+  border-radius: 1px;
+}
+
+.diya-flame {
+  position: relative;
+  width: 22px;
+  height: 48px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-bottom: -4px;
+}
+
+.diya-flame.lit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.flame-aura {
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.5) 0%, rgba(255, 60, 0, 0.2) 60%, transparent 80%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  filter: blur(4px);
+  animation: flameFlicker 1.8s ease-in-out infinite alternate;
+}
+
+.flame-core {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffffff 0%, #fff4b8 20%, #ffcc00 50%, #ff6600 85%, #cc2200 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 0 15px #ffd783, 0 0 30px #ff9900;
+  animation: flameFlicker 1.4s ease-in-out infinite alternate;
+}
+
+.clay-diya {
+  position: relative;
+  width: 150px;
+  height: 72px;
+  background: linear-gradient(180deg, #d4760a 0%, #994a08 45%, #592803 100%);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.clay-diya::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  right: -8px;
+  height: 20px;
+  background: linear-gradient(180deg, #e89520 0%, #c46808 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.clay-diya::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 6px;
+  right: 6px;
+  height: 10px;
+  background: radial-gradient(ellipse, rgba(255, 215, 100, 0.3) 0%, rgba(90, 40, 5, 0.8) 75%);
+  border-radius: 50%;
+}
+
+.diya-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.diya-message {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--warm-gold);
+  text-shadow: 0 0 20px rgba(255, 215, 131, 0.5);
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
+  max-width: 580px;
+  line-height: 1.4;
+}
+
+.diya-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── PAGE 6: wishes.html (A Beautiful Diwali Wish) ────────── */
+
+.page-wishes {
+  background: radial-gradient(circle at 50% 30%, #301048 0%, #1b072c 50%, #0d0418 100%);
+}
+
+.wishes-frame {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 3.5rem 2.5rem;
+  background: linear-gradient(145deg, rgba(46, 16, 72, 0.75), rgba(20, 8, 35, 0.9));
+  border: 1px solid rgba(212, 166, 74, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 215, 131, 0.12);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.wishes-frame::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255, 215, 131, 0.22);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.wishes-heading {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.8rem, 7vw, 4.2rem);
+  color: var(--warm-gold);
+  text-shadow: 0 0 25px rgba(255, 215, 131, 0.6), 0 0 50px rgba(212, 166, 74, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.wishes-subheading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  color: var(--cream);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.wishes-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 580px;
+  margin: 1.5rem auto;
+}
+
+.wishes-text p {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  color: var(--cream);
+  line-height: 2;
+  font-weight: 300;
+}
+
+.side-lantern {
+  font-size: 2.2rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ─── PAGE 7: final.html (A Final Message) ─────────────────── */
+
+.page-final {
+  background: radial-gradient(circle at 50% 25%, #2d0f42 0%, #180628 50%, #0c0216 100%);
+}
+
+.final-frame {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin: 1.5rem auto;
+  padding: 3.5rem 2.8rem;
+  background: linear-gradient(145deg, rgba(38, 14, 58, 0.8), rgba(22, 8, 36, 0.92));
+  border: 1px solid rgba(212, 166, 74, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(212, 166, 74, 0.1);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.final-frame::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255, 215, 131, 0.2);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.final-letter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin: 1.5rem auto;
+  max-width: 560px;
+}
+
+.final-letter p {
+  font-family: 'Caveat', 'Dancing Script', cursive;
+  font-size: clamp(1.25rem, 3.6vw, 1.55rem);
+  color: #FFF2D9;
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 2px rgba(255, 242, 217, 0.3);
+}
+
+.final-highlight {
+  font-family: var(--font-cursive) !important;
+  font-size: clamp(1.8rem, 5vw, 2.3rem) !important;
+  color: var(--warm-gold) !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  margin: 0.8rem 0;
+  text-shadow: 0 0 15px rgba(255, 215, 131, 0.5);
+}
+
+.final-signature {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  color: var(--warm-gold);
+  margin-top: 1.5rem;
+  text-shadow: 0 0 12px rgba(255, 215, 131, 0.4);
+}
+}
+
+/* Responsive Overrides Across All 7 Pages */
+@media (max-width: 600px) {
+  /* Page 1: Welcome */
+  .toran {
+    gap: 2px;
+    margin: 0.2rem auto 1.2rem auto;
+  }
+  .toran-flower {
+    font-size: 1.1rem;
+  }
+  .toran-chain {
+    max-width: 8px;
+  }
+  .doorway {
+    padding: 2.2rem 1.2rem 1.8rem 1.2rem;
+    border-radius: 120px 120px 18px 18px;
+  }
+  .doorway::before {
+    border-radius: 114px 114px 14px 14px;
+  }
+  .welcome-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .entrance-text {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+  }
+  .entrance-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+  .diyas-row {
+    gap: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .diya-icon {
+    font-size: 1.7rem;
+  }
+  .diyas-row .diya-icon:nth-child(2) {
+    font-size: 2.1rem;
+  }
+  .rangoli {
+    width: 140px;
+    height: 25px;
+    margin: 1.2rem auto 0.6rem auto;
+  }
+
+  /* Page 2: Message */
+  .diya-hero {
+    margin-bottom: 1rem !important;
+  }
+  .diya-hero span {
+    font-size: 3rem !important;
+  }
+  .message-frame {
+    padding: 2.2rem 1.3rem;
+  }
+  .message-heading {
+    font-size: 2.2rem;
+  }
+  .message-paragraph {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  /* Page 3: Apology (White Handwritten Stationery) */
+  .letter-paper {
+    padding: 2.8rem 1.4rem 2rem 1.8rem;
+    margin: 0.8rem auto 1.5rem auto;
+  }
+  .letter-paper::before {
+    left: 18px;
+  }
+  .wax-seal {
+    width: 46px;
+    height: 46px;
+    top: -16px;
+    right: 16px;
+    font-size: 1.3rem;
+  }
+  .letter-salutation {
+    font-size: 2.3rem;
+    margin-bottom: 0.8rem;
+  }
+  .letter-body p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+  }
+  .letter-signature {
+    font-size: 2.1rem;
+    margin-top: 1.4rem;
+  }
+
+  /* Page 4: Reflection */
+  .reflection-cards {
+    gap: 1.2rem;
+    margin: 1.5rem auto;
+  }
+  .reflection-card {
+    padding: 1.6rem 1.2rem;
+  }
+  .card-icon {
+    font-size: 2.2rem;
+  }
+  .card-header {
+    font-size: 1.1rem;
+  }
+  .card-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Page 5: Diya */
+  .diya-stage {
+    min-height: 240px;
+    margin: 1rem auto 1.5rem auto;
+    padding: 1rem;
+  }
+  .clay-diya {
+    width: 130px;
+    height: 60px;
+  }
+  .diya-flame {
+    width: 18px;
+    height: 42px;
+  }
+  .diya-ambient {
+    width: 250px;
+    height: 250px;
+  }
+  .diya-message {
+    font-size: 1.8rem;
+  }
+
+  /* Page 6: Wishes */
+  .wishes-frame {
+    padding: 2.2rem 1.3rem;
+  }
+  .wishes-heading {
+    font-size: 2.6rem;
+  }
+  .wishes-subheading {
+    font-size: 1.4rem;
+  }
+  .wishes-text p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+  .side-lantern {
+    display: none;
+  }
+
+  /* Page 7: Final */
+  .final-frame {
+    padding: 2.2rem 1.3rem;
+  }
+  .final-letter p {
+    font-size: 1.25rem;
+    line-height: 1.75;
+  }
+  .final-highlight {
+    font-size: 1.6rem !important;
+  }
+  .final-signature {
+    font-size: 1.6rem;
+  }
+  .final-diya span {
+    font-size: 3rem !important;
+  }
+}
+
+
+
+/* ─── Couple Memory Photo (final.html) ──────────────────────── */
+
+.couple-photo-wrapper {
+  margin: 1.5rem auto 2.2rem auto;
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+}
+
+.photo-frame {
+  position: relative;
+  border-radius: 18px;
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(212, 166, 74, 0.65), rgba(69, 15, 39, 0.85), rgba(255, 215, 131, 0.65));
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 35px rgba(212, 166, 74, 0.35);
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.couple-photo {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  border: 1px solid rgba(255, 215, 131, 0.45);
+  filter: contrast(1.05) brightness(1.03);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.photo-frame:hover .couple-photo {
+  transform: scale(1.02);
+}
+
+.photo-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  box-shadow: inset 0 0 30px rgba(255, 180, 0, 0.28);
+}
+
+.photo-caption {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+  color: var(--warm-gold);
+  margin-top: 1rem;
+  text-shadow: 0 0 18px rgba(255, 215, 131, 0.45);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .couple-photo-wrapper {
+    max-width: 100%;
+    margin: 1.2rem auto 1.8rem auto;
+  }
+  .photo-frame {
+    padding: 6px;
+    border-radius: 14px;
+  }
+  .couple-photo {
+    border-radius: 10px;
+    max-height: 300px;
+  }
+  .photo-caption {
+    font-size: 1.35rem;
+  }
+}
