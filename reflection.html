@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>What I Want You To Know</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <style>
+    .reflection-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 600px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .reflection-card {
+      position: relative;
+      background: linear-gradient(135deg, rgba(36, 16, 57, 0.7), rgba(69, 15, 39, 0.5));
+      border: 1px solid rgba(212, 166, 74, 0.15);
+      border-radius: 12px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .reflection-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(212, 166, 74, 0.15);
+      border-color: rgba(212, 166, 74, 0.35);
+    }
+
+    .corner {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-color: #D4A64A;
+      opacity: 0.4;
+      transition: opacity 0.4s ease;
+    }
+
+    .reflection-card:hover .corner {
+      opacity: 0.8;
+    }
+
+    .corner-tl { top: 12px; left: 12px; border-top: 2px solid; border-left: 2px solid; }
+    .corner-tr { top: 12px; right: 12px; border-top: 2px solid; border-right: 2px solid; }
+    .corner-bl { bottom: 12px; left: 12px; border-bottom: 2px solid; border-left: 2px solid; }
+    .corner-br { bottom: 12px; right: 12px; border-bottom: 2px solid; border-right: 2px solid; }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      filter: drop-shadow(0 0 8px rgba(255, 180, 0, 0.4));
+    }
+
+    .card-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #D4A64A;
+      letter-spacing: 3px;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: #FFF1D6;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 480px) {
+      .reflection-cards {
+        gap: 1.4rem;
+        padding: 0 0.5rem;
+      }
+      .reflection-card {
+        padding: 1.5rem 1.2rem;
+      }
+      .card-header {
+        font-size: 1.05rem;
+        letter-spacing: 2px;
+      }
+      .card-body {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body class="page-reflection">
+
+  <div class="page-transition-overlay"></div>
+
+  <!-- Fireworks canvas (background) -->
+  <canvas id="fireworks-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <div class="floating-container"></div>
+
+  <div class="page-wrapper">
+
+    <h2 class="section-heading glow-text" style="font-family:'Great Vibes',cursive;color:#D4A64A;text-align:center;font-size:3rem;">What I Want You To Know</h2>
+
+    <div class="decorative-line"></div>
+
+    <div class="reflection-cards">
+
+      <div class="reflection-card reveal stagger-1">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="card-icon">🪷</div>
+        <h3 class="card-header">I UNDERSTAND</h3>
+        <p class="card-body">Your feelings matter, and I should respect them.</p>
+      </div>
+
+      <div class="reflection-card reveal stagger-2">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="card-icon">🪔</div>
+        <h3 class="card-header">I REGRET</h3>
+        <p class="card-body">I genuinely regret the moments when my actions caused you sadness.</p>
+      </div>
+
+      <div class="reflection-card reveal stagger-3">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="card-icon">🌸</div>
+        <h3 class="card-header">I WANT TO IMPROVE</h3>
+        <p class="card-body">I want to show improvement through my actions, not just words.</p>
+      </div>
+
+    </div>
+
+    <div class="nav-buttons">
+      <a href="apology.html" class="btn-prev" onclick="navigateTo('apology.html'); return false;">Previous</a>
+      <a href="diya.html" class="btn-next" onclick="navigateTo('diya.html'); return false;">Light a Diya</a>
+    </div>
+
+  </div>
+
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof initFireworks === 'function') {
+        initFireworks('fireworks-canvas', 0.008);
+      }
+      if (typeof initGoldenParticles === 'function') {
+        initGoldenParticles();
+      }
+      if (typeof addFloatingLanterns === 'function') {
+        addFloatingLanterns(3);
+      }
+    });
+  </script>
+</body>
+</html>
