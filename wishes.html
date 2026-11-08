@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Beautiful Diwali Wish</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-wishes">
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Fireworks canvas (celebratory background) -->
+  <canvas id="fireworks-canvas" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Floating elements container -->
+  <div class="floating-container"></div>
+
+  <!-- Main content wrapper -->
+  <div class="page-wrapper">
+    <!-- Side hanging lanterns -->
+    <div class="side-lantern" style="position:absolute;left:2rem;top:18%;font-size:2.8rem;filter:drop-shadow(0 0 16px rgba(255,180,0,0.6));animation:lanternSwing 3.5s ease-in-out infinite;">🏮</div>
+    <div class="side-lantern" style="position:absolute;right:2rem;top:22%;font-size:2.4rem;filter:drop-shadow(0 0 14px rgba(255,180,0,0.5));animation:lanternSwing 4s ease-in-out infinite 0.8s;">🏮</div>
+
+    <!-- Festive wishes frame -->
+    <div class="wishes-frame reveal">
+      <div class="corner-ornament corner-top-left"></div>
+      <div class="corner-ornament corner-top-right"></div>
+      <div class="corner-ornament corner-bottom-left"></div>
+      <div class="corner-ornament corner-bottom-right"></div>
+
+      <div class="ornament-top" style="color:#D4A64A;letter-spacing:4px;font-size:1.1rem;margin-bottom:0.6rem;">✦ 🪷 ✦</div>
+
+      <h1 class="wishes-heading glow-text">
+        Happy Diwali
+      </h1>
+
+      <h2 class="wishes-subheading">
+        Meri Lakshmi ❤️
+      </h2>
+
+      <div class="decorative-line"></div>
+
+      <div class="wishes-text">
+        <p class="reveal stagger-1">
+          May your life always be filled with happiness, peace, good health and countless reasons to smile.
+        </p>
+
+        <p class="reveal stagger-2">
+          May every diya bring brightness into your life and every new day bring something beautiful.
+        </p>
+
+        <p class="reveal stagger-3" style="color:#FFD783;font-weight:400;font-size:1.22rem;">
+          You deserve all the happiness in the world. ✨
+        </p>
+      </div>
+
+      <!-- Festive Glowing Diya Row -->
+      <div class="diyas-row reveal stagger-4" style="margin-top:2.2rem;">
+        <span class="diya-icon" style="font-size:2rem;animation-delay:0s;">🪔</span>
+        <span class="diya-icon" style="font-size:2.4rem;animation-delay:0.3s;">🪔</span>
+        <span class="diya-icon" style="font-size:2.8rem;animation-delay:0.6s;">🪔</span>
+        <span class="diya-icon" style="font-size:2.4rem;animation-delay:0.9s;">🪔</span>
+        <span class="diya-icon" style="font-size:2rem;animation-delay:1.2s;">🪔</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons reveal stagger-5">
+      <a href="diya.html" class="btn-prev" onclick="navigateTo('diya.html'); return false;">Previous</a>
+      <a href="final.html" class="btn-next" onclick="navigateTo('final.html'); return false;">One Last Message</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Grand celebratory fireworks
+      if (typeof initFireworks === 'function') {
+        initFireworks('fireworks-canvas', 0.035);
+      }
+      // Floating marigolds and lanterns
+      createMarigoldPetals(document.querySelector('.floating-container'), 14);
+      createFloatingLanterns(document.querySelector('.floating-container'), 5);
+      createGoldenParticles(document.querySelector('.floating-container'), 25);
+    });
+  </script>
+</body>
+</html>
+
