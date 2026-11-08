@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Sincere Apology</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="page-apology">
+  <!-- Page transition overlay -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Floating elements container (rose petals) -->
+  <div class="floating-container"></div>
+
+  <!-- Main content -->
+  <div class="page-wrapper">
+    <!-- Section heading -->
+    <h2 class="section-heading reveal" style="font-family:'Great Vibes',cursive;color:#D4A64A;text-align:center;font-size:2.8rem;font-weight:400;margin-bottom:2rem;text-shadow:0 0 20px rgba(212,166,74,0.3);">
+      A Sincere Apology
+    </h2>
+
+    <!-- Letter paper -->
+    <div class="letter-paper reveal">
+      <!-- Wax seal -->
+      <div class="wax-seal" style="position:absolute;top:-18px;right:24px;width:50px;height:50px;background:radial-gradient(circle at 38% 38%, #e74c5e, #C74728, #8b1a1a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 4px 15px rgba(199,71,40,0.5),inset 0 -2px 4px rgba(0,0,0,0.3);z-index:2;">
+        ❤️
+      </div>
+
+      <!-- Salutation -->
+      <p class="letter-salutation">
+        Hey,
+      </p>
+
+      <!-- Letter body -->
+      <div class="letter-body">
+        <p class="reveal stagger-1">
+          I know that saying sorry cannot undo what happened.
+        </p>
+
+        <p class="reveal stagger-2">
+          I am genuinely sorry for hurting you.
+        </p>
+
+        <p class="reveal stagger-3">
+          I don't want to make excuses or justify my mistakes.
+        </p>
+
+        <p class="reveal stagger-4">
+          I just want you to know that your feelings matter to me.
+        </p>
+
+        <p class="reveal stagger-5">
+          I understand that trust, happiness and peace are important, and I don't want my actions to take those things away from you.
+        </p>
+
+        <p class="reveal stagger-6">
+          I am sorry, genuinely.
+        </p>
+      </div>
+
+      <!-- Signature -->
+      <p class="letter-signature">
+        With sincerity,
+      </p>
+    </div>
+
+    <!-- Scattered rose petals around the letter -->
+    <div class="rose-petal-scatter" style="position:relative;pointer-events:none;">
+      <div class="scattered-petal" style="position:absolute;top:-320px;left:-20px;width:14px;height:14px;background:radial-gradient(ellipse at 30% 30%, #f7a8b8, #e05577);border-radius:50% 0 50% 50%;opacity:0.6;transform:rotate(25deg);animation:petalDrift 6s ease-in-out infinite;"></div>
+      <div class="scattered-petal" style="position:absolute;top:-180px;right:-15px;width:12px;height:12px;background:radial-gradient(ellipse at 30% 30%, #ff9aa2, #c74728);border-radius:50% 0 50% 50%;opacity:0.5;transform:rotate(-40deg);animation:petalDrift 7s ease-in-out infinite 0.5s;"></div>
+      <div class="scattered-petal" style="position:absolute;top:-450px;left:30px;width:10px;height:10px;background:radial-gradient(ellipse at 30% 30%, #f8b4c8, #d4577a);border-radius:50% 0 50% 50%;opacity:0.55;transform:rotate(110deg);animation:petalDrift 5.5s ease-in-out infinite 1s;"></div>
+      <div class="scattered-petal" style="position:absolute;top:-100px;right:40px;width:16px;height:16px;background:radial-gradient(ellipse at 30% 30%, #ffc1cc, #e74c5e);border-radius:50% 0 50% 50%;opacity:0.45;transform:rotate(-70deg);animation:petalDrift 8s ease-in-out infinite 1.5s;"></div>
+      <div class="scattered-petal" style="position:absolute;top:-380px;right:10px;width:11px;height:11px;background:radial-gradient(ellipse at 30% 30%, #f7a8b8, #c74728);border-radius:50% 0 50% 50%;opacity:0.5;transform:rotate(60deg);animation:petalDrift 6.5s ease-in-out infinite 2s;"></div>
+      <div class="scattered-petal" style="position:absolute;top:-250px;left:-10px;width:13px;height:13px;background:radial-gradient(ellipse at 30% 30%, #ffb7c5, #d94f6b);border-radius:50% 0 50% 50%;opacity:0.5;transform:rotate(150deg);animation:petalDrift 7.5s ease-in-out infinite 0.8s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons reveal stagger-7">
+      <a href="message.html" class="btn-prev" onclick="navigateTo('message.html'); return false;">Previous</a>
+      <a href="reflection.html" class="btn-next" onclick="navigateTo('reflection.html'); return false;">One More Thing</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/fireworks.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add rose petals to the floating container with pink/red colors
+      createFallingPetals(document.querySelector('.floating-container'), 15, ['#f7a8b8', '#e05577', '#ff9aa2', '#c74728', '#ffc1cc', '#d94f6b']);
+    });
+  </script>
+</body>
+</html>
